@@ -1,0 +1,23 @@
+{
+  "name": "yoyo",
+  "version": "1.0.0",
+  "description": "A fast rtc application",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yoyolick/yoyo.git"
+  },
+  "author": "Ryan Zmuda",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Yoyolick/yoyo/issues"
+  },
+  "homepage": "https://github.com/Yoyolick/yoyo#readme",
+  "devDependencies": {
+    "electron": "^16.0.6"
+  }
+}
