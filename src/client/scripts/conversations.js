@@ -24,7 +24,7 @@ ipcRenderer.on('mainprocess-response', (event, arg) => {
 
 function renderconversations(list) {
     for (var i = 0; i < list.length; i++) {
-        document.getElementById('conversations').innerHTML += '<div><a id="' + list[i][0] + '" onclick="openconversation(' + list[i][0] + ')">' + list[i][1] + ' and ' + list[i][2] + '</a></div>';
+        document.getElementById('conversations').innerHTML += '<div class="conversationbtn"><a id="' + list[i][0] + '" onclick="openconversation(' + list[i][0] + ')">' + list[i][1] + ' and ' + list[i][2] + '</a></div>';
     }
 }
 var conversation_id = ''
@@ -57,8 +57,10 @@ function sendmessage() {
     message = document.getElementById('message_input').value;
     if (message.length > 250) {
         alert('Your exceeds the 250 character maximum.')
+        return;
     } else if (message.length == 0) {
         alert('Your message cannot be 0 characters.')
+        return;
     }
     data = {
         "conversationid": String(conversation_id),

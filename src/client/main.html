@@ -5,20 +5,31 @@
     <title>yoyo</title>
     <script src="scripts/xhr.js"></script>
     <script src="scripts/conversations.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@900&family=Roboto&display=swap"
+        rel="stylesheet">
 </head>
 
 <body onload="openedmain();">
-    <div id="conversation_browser">
-        <h1>Conversations</h1>
-        <div id="conversations"></div>
+    <div id="sidebar">
+        <div id="conversation_browser">
+            <h1 style="text-align: center;">Conversations</h1>
+            <div id="conversations"></div>
+        </div>
     </div>
-    <div id="selected_conversation">
-        <h1 id="conversation_name">No Conversation Selected</h1>
-        <div id="messages_container"></div>
-    </div>
-    <div id="entry_area">
-        <input type="text" id="message_input">
-        <button onclick="sendmessage();">Send</button>
+    <div id="realcontent">
+        <div class="convheader">
+            <h1 id="conversation_name">No Conversation Selected</h1>
+        </div>
+        <div id="selected_conversation">
+            <div id="messages_container"></div>
+        </div>
+        <div id="entry_area">
+            <input type="text" id="message_input">
+            <button style="width: 56px;" onclick="sendmessage();">Send</button>
+        </div>
     </div>
 </body>
 

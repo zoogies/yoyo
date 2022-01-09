@@ -1,0 +1,124 @@
+body {
+    background-color: rgb(17, 17, 17);
+    font-family: 'Roboto', sans-serif;
+    width: 800px;
+    height: 600px;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+}
+
+p {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+b {
+    color: white;
+}
+
+.panel {
+    background-color: rgb(17, 17, 17);
+    border-radius: 20px;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+}
+
+#image {
+    width: 800px;
+    height: 600px;
+    background-image: url("https://thumbs.gfycat.com/AdorableBrownEuropeanfiresalamander-size_restricted.gif");
+    background-repeat: no-repeat;
+    background-size: 800px 615px;
+}
+
+#sidebar {
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    width: 220px;
+    /* Set the width of the sidebar */
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: rgb(32, 32, 32);
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+}
+
+#realcontent {
+    padding-left: 220px;
+    overflow-x: hidden;
+}
+
+.conversationbtn {
+    width: 220px;
+    height: 20px;
+    background-color: rgb(19, 19, 19);
+    outline: white;
+    padding: 3px;
+}
+
+.convheader {
+    height: 38px;
+    padding-left: 220px;
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    position: fixed;
+    width: 580px;
+    height: 81px;
+    background-color: rgb(41, 41, 41);
+}
+
+#messages_container {
+    height: max-content;
+    overflow-x: wrap;
+}
+
+#entry_area {
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 580px;
+}
+
+#message_input {
+    width: 510px;
+}
+
+#selected_conversation {
+    padding-top: 81px;
+    padding-bottom: 10px;
+}
+
+#conversation_name {
+    padding-left: 10px;
+}
+
+input {
+    color: white;
+    background-color: rgb(48, 48, 48);
+}
+
+button {
+    color: white;
+    background-color: rgb(48, 48, 48);
+}
