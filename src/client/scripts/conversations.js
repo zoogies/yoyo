@@ -1,3 +1,5 @@
+const net = require('net');
+
 function openedmain() {
     let Data = {
         command: "getuser"
@@ -28,7 +30,7 @@ function renderconversations(list) {
 var conversation_id = ''
 
 function openconversation(id) {
-    document.getElementById('message_input').value = '';
+    //document.getElementById('message_input').value = '';
     conversation_id = id;
     data = {
         "conversation_id": String(conversation_id)
@@ -65,8 +67,44 @@ function sendmessage() {
     }
     basicxhr('/sendmessage', data).then(function (response) {
             openconversation(conversation_id);
+            document.getElementById('message_input').value = '';
         })
         .catch(function (err) {
             console.error('An error occured!', err);
         });
 }
+setInterval(() => {
+    if (conversation_id != '') {
+        openconversation(conversation_id)
+    }
+}, 1000);
+
+/*
+//keepalive
+setInterval(() => {
+    data = {
+        "username": String(username),
+    }
+    basicxhr('/keepalive', data).then(function (response) {
+            console.log('sent keepalive')
+        })
+        .catch(function (err) {
+            console.error('An error occured!', err);
+        });
+}, 5000);
+
+socketClient = net.connect({
+    host: '76.181.32.163:5000',
+    port: 5000
+}, () => {
+    // 'connect' listener
+    console.log('connected to server!');
+});
+
+socketClient.on('data', (data) => {
+    console.log(data.toString());
+});
+socketClient.on('end', () => {
+    console.log('disconnected from server');
+});
+*/
