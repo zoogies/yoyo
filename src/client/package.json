@@ -2,6 +2,7 @@
   "name": "yoyo",
   "version": "1.0.0",
   "description": "A fast rtc application",
+  "productName": "yoyo",
   "main": "main.js",
   "scripts": {
     "test": "test",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/Yoyolick/yoyo#readme",
   "devDependencies": {
-    "electron": "^16.0.6"
+    "electron": "^16.0.6",
+    "electron-packager": "^15.4.0"
   }
 }
