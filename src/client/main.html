@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>yoyo</title>
+    <script src="scripts/xhr.js"></script>
+    <script src="scripts/conversations.js"></script>
+</head>
+
+<body onload="openedmain();">
+    <div id="conversation_browser">
+        <h1>Conversations</h1>
+        <div id="conversations"></div>
+    </div>
+    <div id="selected_conversation">
+        <h1 id="conversation_name">No Conversation Selected</h1>
+        <div id="messages_container"></div>
+    </div>
+    <div id="entry_area">
+        <input type="text" id="message_input">
+        <button onclick="sendmessage();">Send</button>
+    </div>
+</body>
+
+</html>

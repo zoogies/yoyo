@@ -1,18 +1,27 @@
 const {
+    ipcMain
+} = require('electron');
+
+const {
     app,
     BrowserWindow
 } = require('electron')
 
 function createWindow() {
-    const win = new BrowserWindow({
+    var win = new BrowserWindow({
         width: 800,
         height: 600,
         resizable: false,
         title: "yoyo",
-        maximizable: false
+        maximizable: false,
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
     })
 
     win.loadFile('index.html')
+    win.openDevTools();
 }
 
 app.whenReady().then(() => {
@@ -26,3 +35,17 @@ app.whenReady().then(() => {
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') app.quit()
 })
+
+var username = '';
+ipcMain.on('request-mainprocess-action', (event, arg) => {
+    if (arg['command'] == 'setuser') {
+        username = arg['username'];
+    }
+    if (arg['command'] == 'getuser') {
+        data = {
+            'information': 'username',
+            'username': username
+        }
+        event.sender.send('mainprocess-response', data);
+    }
+});
